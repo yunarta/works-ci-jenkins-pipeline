@@ -1,0 +1,10 @@
+Publish artifact to Artifactory with id 'REPO' with specified upload spec
+
+{
+  "files": [
+     {
+      "pattern": "${path}/build/libs/(${artifact}-${version}*)",
+      "target": "${repo}/${group}/${artifact}/${version}/{1}"
+     }
+  ]
+}
