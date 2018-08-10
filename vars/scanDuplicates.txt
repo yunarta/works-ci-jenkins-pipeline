@@ -1,0 +1,5 @@
+Execute PMD CPD function
+
+- minTokens Minimum number of tokens to be considered as duplicate (defaults 50)
+- files Comma separated file paths
+- filelist Path to file containing comma separated file paths (overrides files)
