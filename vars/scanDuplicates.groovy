@@ -3,6 +3,7 @@ def call(Map config) {
 
     def files = config.files
     def filelist = config.filelist ?: ""
+    def lang = config.language ?: "java"
 
     def input = "--files $files"
     if (!filelist.isEmpty()) {
@@ -16,6 +17,6 @@ def call(Map config) {
     }
 
     sh """
-        $PMD_HOME/run.sh cpd --failOnViolation false --format xml --minimum-tokens ${minTokens} $input > reports/cpd.xml
+        $PMD_HOME/run.sh cpd --failOnViolation false --format xml --language $lang --minimum-tokens ${minTokens} $input > reports/cpd.xml
     """
 }
